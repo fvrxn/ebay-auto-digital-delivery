@@ -2,7 +2,7 @@ import datetime
 
 # Set up the logging options
 consoleLog = True
-fileLog = False
+fileLog = True
 
 
 def log(message):
@@ -31,7 +31,7 @@ def log(message):
 def logname():
     # Return the current timestamp as the log file name
     now = datetime.datetime.now()
-    return now.strftime("run_%Y-%m-%d-%H-%M")
+    return now.strftime("run_%Y-%m-%d")
 
 
 def logSpace():
