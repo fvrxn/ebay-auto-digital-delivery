@@ -1,11 +1,13 @@
 import datetime
+from utils.telegramAPI import send_telegram_notification
 
 # Set up the logging options
 consoleLog = True
 fileLog = True
+telegramLog = True
 
 
-def log(message):
+def log(message, priority):
     # Get the current date and time each time the function is called
     now = datetime.datetime.now()
     
@@ -15,6 +17,13 @@ def log(message):
     # If the consoleLog option is enabled, print the message to the console
     if consoleLog:
         print(formatted_now, message)
+
+    # If the telegramLog option is enabled, send the message via Telegram
+    if telegramLog:
+        # If priority is high, send the message via Telegram
+        if priority == 1:
+            send_telegram_notification(message)
+
 
     # If the fileLog option is enabled, write the message to a log file
     if fileLog:
