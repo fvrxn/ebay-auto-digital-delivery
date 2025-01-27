@@ -1,7 +1,7 @@
 import os
 from urllib.parse import urlencode
 from dotenv import load_dotenv
-from utils.output import output
+from source.output import output
 
 # Load environment variables
 load_dotenv()
